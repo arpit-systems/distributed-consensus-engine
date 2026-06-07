@@ -19,3 +19,17 @@ services:
   node5:
     build: .
     container_name: node5
+
+  client:
+    build: .
+    container_name: client
+    command: python src/client.py
+
+  adversary:
+    build: .
+    container_name: adversary
+    command: python src/adversary.py
+
+  toxiproxy:
+    image: shopify/toxiproxy
+    container_name: toxiproxy
