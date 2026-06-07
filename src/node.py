@@ -11,6 +11,9 @@ class Node:
     def receive_accept(self):
         print(f"Node {self.node_id} -> ACCEPTED")
 
+    def send_heartbeat(self):
+        print(f"Leader Node {self.node_id} -> HEARTBEAT")
+
 
 nodes = []
 
@@ -23,6 +26,10 @@ leader.is_leader = True
 
 print("Leader Election Complete")
 print(f"Leader is Node {leader.node_id}")
+
+print("\nHEARTBEAT MONITORING")
+print("--------------------")
+leader.send_heartbeat()
 
 transaction = "TX001 : Pay Rs 100"
 
